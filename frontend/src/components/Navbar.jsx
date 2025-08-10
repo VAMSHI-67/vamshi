@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Settings } from 'lucide-react';
 import { personalInfo } from '../data/mock';
 
 const Navbar = () => {
@@ -60,6 +60,19 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
+            
+            {/* Admin Link */}
+            <Link
+              to="/admin"
+              className={`p-2 rounded-lg ${
+                location.pathname === '/admin' 
+                  ? 'bg-accent text-inverse' 
+                  : 'text-white hover:bg-secondary-olive/30 hover:text-accent'
+              } transition-all duration-300`}
+              title="Admin Panel"
+            >
+              <Settings size={20} />
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,6 +104,21 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Admin Link */}
+              <Link
+                to="/admin"
+                onClick={toggleMenu}
+                className={`flex items-center gap-2 py-3 px-4 ${
+                  location.pathname === '/admin' 
+                    ? 'text-accent bg-secondary-olive/20' 
+                    : 'text-white hover:text-accent hover:bg-secondary-olive/10'
+                } transition-all duration-300 rounded-lg mb-2 fade-in`}
+                style={{ animationDelay: `${navLinks.length * 0.1}s` }}
+              >
+                <Settings size={20} />
+                Admin Panel
+              </Link>
             </div>
           </div>
         )}
