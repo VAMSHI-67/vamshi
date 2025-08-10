@@ -181,7 +181,7 @@ const AdminPage = () => {
                         type="email"
                         value={personalData.email}
                         onChange={(e) => setPersonalData({...personalData, email: e.target.value})}
-                        className="w-full px-4 py-3 bg-secondary-olive/30 border border-secondary-olive/50 rounded-lg text-white"
+                        className="w-full px-4 py-3 bg-white border border-secondary-olive/50 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                       />
                     </div>
                     
