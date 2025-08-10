@@ -180,15 +180,27 @@ frontend:
 
   - task: "Contact page with form validation"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/pages/ContactPage.jsx"
     stuck_count: 0
     priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Contact form with validation, contact info cards, FAQ section working correctly"
+
+  - task: "Content Management System for editing portfolio data"
+    implemented: false
+    working: false
+    file: "/app/frontend/src/data/mock.js"
+    stuck_count: 1
+    priority: "high"
     needs_retesting: true
     status_history:
-      - working: "NA"
-        agent: "main"
-        comment: "Contact form with validation, contact info cards, FAQ section implemented"
+      - working: false
+        agent: "user"
+        comment: "User reports being unable to upload their details in placeholders - need CMS or admin interface"
 
   - task: "Navigation and routing system"
     implemented: true
