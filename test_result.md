@@ -192,11 +192,11 @@ frontend:
 
   - task: "Content Management System for editing portfolio data"
     implemented: true
-    working: true
+    working: false
     file: "/app/frontend/src/pages/AdminPage.jsx"
-    stuck_count: 0
+    stuck_count: 1
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: false
         agent: "user"
@@ -204,6 +204,9 @@ frontend:
       - working: true
         agent: "main"
         comment: "Created comprehensive admin panel at /admin with forms for personal info, experience, projects, and social links. Users can now easily edit all content without touching code"
+      - working: false
+        agent: "user"
+        comment: "Text visibility issue in admin forms - white textbox background makes entered text unreadable. Need to fix input field contrast and colors."
 
   - task: "Navigation and routing system"
     implemented: true
